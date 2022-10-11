@@ -5,8 +5,9 @@
   "sideEffects": false,
   "scripts": {
     "build": "remix build",
-    "dev": "remix dev",
-    "start": "remix-serve api/build"
+    "dev": "concurrently \"npm run dev:css\" \"remix dev\"",
+    "start": "remix-serve api/build",
+    "dev:css": "tailwindcss -w -i ./app/styles.css -o ./app/dist/styles.css"
   },
   "dependencies": {
     "@remix-run/node": "^1.7.0",
@@ -22,6 +23,10 @@
     "@remix-run/serve": "^1.7.0",
     "@types/react": "^17.0.47",
     "@types/react-dom": "^17.0.17",
+    "autoprefixer": "^10.4.12",
+    "postcss": "^8.4.17",
+    "tailwind-config": "*",
+    "tailwindcss": "^3.1.8",
     "tsconfig": "*",
     "typescript": "^4.8.3"
   },

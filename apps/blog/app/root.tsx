@@ -7,7 +7,9 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import styles from "~/styles.css";
+import styles from "./dist/styles.css"
+
+
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
